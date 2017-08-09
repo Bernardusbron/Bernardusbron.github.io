@@ -260,13 +260,13 @@
 	lighton2.addEventListener('touchstart', function(event) {
 		lighton2.src= './images/light_on.png';
 		lightoff2.src= './images/lightoff.png';
-		cpf.set("socket d5", 1);
+		cpf.set("socket d8", 1);
 	});
 	// LED關燈
 	lightoff2.addEventListener('touchstart', function(event) {
 		lightoff2.src= './images/light_off.png';
 		lighton2.src= './images/lighton.png';
-		cpf.set("socket d5", 0);
+		cpf.set("socket d8", 0);
 	});
 	
 	// 溫度轉攝氏
@@ -280,7 +280,7 @@
 	// cpf setup
 	function setup(){
 		if(cpf)
-			var ret = cpf.setPinMode('["resetPin"],["setPinMode", "analog", 0, "INPUT"],["setPinMode", "analog", 1, "INPUT"],["setPinMode", "analog", 2, "INPUT"],["setPinMode", "analog", 3, "INPUT"],["setPinMode", "digital", 2,"OUTPUT"],["setPinMode", "digital", 4,"OUTPUT"],["setPinMode", "digital", 5,"OUTPUT"],["setPinMode", "digital", 3,"PWM"],["setPinMode", "digital", 7,"INPUT"]');
+			var ret = cpf.setPinMode('["resetPin"],["setPinMode", "analog", 0, "INPUT"],["setPinMode", "analog", 1, "INPUT"],["setPinMode", "analog", 2, "INPUT"],["setPinMode", "analog", 3, "INPUT"],["setPinMode", "digital", 2,"OUTPUT"],["setPinMode", "digital", 4,"OUTPUT"],["setPinMode", "digital", 8,"OUTPUT"],["setPinMode", "digital", 3,"PWM"],["setPinMode", "digital", 7,"INPUT"]');
 		
 	}
 
