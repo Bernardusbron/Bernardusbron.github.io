@@ -234,13 +234,12 @@
 		cpf.set("socket d3", Number(value));
 	}
 	
-	// LED開燈
+
 	lighton.addEventListener('touchstart', function(event) {
 		lighton.src= './images/light_on.png';
 		lightoff.src= './images/lightoff.png';
 		cpf.set("socket d2", 1);
 	});
-	// LED關燈
 	lightoff.addEventListener('touchstart', function(event) {
 		lightoff.src= './images/light_off.png';
 		lighton.src= './images/lighton.png';
@@ -251,7 +250,6 @@
 		lightoff1.src= './images/lightoff.png';
 		cpf.set("socket d4", 1);
 	});
-	// LED關燈
 	lightoff1.addEventListener('touchstart', function(event) {
 		lightoff1.src= './images/light_off.png';
 		lighton1.src= './images/lighton.png';
@@ -260,13 +258,12 @@
 	lighton2.addEventListener('touchstart', function(event) {
 		lighton2.src= './images/light_on.png';
 		lightoff2.src= './images/lightoff.png';
-		cpf.set("socket d8", 1);
+		cpf.request('["digitalWrite",8,1]');
 	});
-	// LED關燈
 	lightoff2.addEventListener('touchstart', function(event) {
 		lightoff2.src= './images/light_off.png';
 		lighton2.src= './images/lighton.png';
-		cpf.set("socket d8", 0);
+		cpf.request('["digitalWrite",8,0]');
 	});
 	
 	// 溫度轉攝氏
