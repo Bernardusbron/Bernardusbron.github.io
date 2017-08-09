@@ -1,7 +1,6 @@
 html {
 	font-family: Microsoft JhengHei;
 	background-color: rgb(135, 172, 85);
-	background-repeat: no-repeat;
 }
 
 h2 {
@@ -25,15 +24,15 @@ hr {
 } 
 .inputs{
 	background-image: url("../images/KAEDU.jpg");
-	height: 30%;
+	height: 300px;
 }
 .outputs{
 	background-image: url("../images/KAEDU.jpg");
-	height: 30%;
+	height: 300px;
 }
 .control{
 	background-color: rgb(135, 17, 155);
-	height: 30%;
+	height: auto;
 }
 
 
