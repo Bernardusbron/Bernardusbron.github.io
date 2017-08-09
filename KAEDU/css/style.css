@@ -49,6 +49,14 @@ hr {
 .control{
 	background-color: rgb(135, 17, 155);
 	height: auto;
+	width:100%;
+}
+.controle1{
+	width:80%;
+}
+.switch{
+	display: inline-block;
+	width:50px;
 }
 
 
