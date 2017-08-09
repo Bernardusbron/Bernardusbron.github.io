@@ -1,7 +1,5 @@
 html {
 	font-family: Microsoft JhengHei;
-	background-image: url("../images/bg.png");
-	background-size: 100% 120%;
 	background-color: rgb(135, 172, 85);
 	background-repeat: no-repeat;
 }
@@ -23,15 +21,19 @@ hr {
 
 #content {
 	margin-top: 40px;
+	width: 80%;
 } 
 .inputs{
-	background-image: url("../images/KAEDU.jpg");	
+	background-image: url("../images/KAEDU.jpg");
+	height: 30%;
 }
 .outputs{
-	background-image: url("../images/KAEDU.jpg");	
+	background-image: url("../images/KAEDU.jpg");
+	height: 30%;
 }
 .control{
 	background-color: rgb(135, 17, 155);
+	height: 30%;
 }
 
 
