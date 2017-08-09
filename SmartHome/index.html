@@ -148,6 +148,10 @@
 	
 	var lighton = document.getElementById("lighton");
 	var lightoff = document.getElementById("lightoff");
+	var lighton1 = document.getElementById("lighton1");
+	var lightoff1 = document.getElementById("lightoff1");
+	var lighton2 = document.getElementById("lighton2");
+	var lightoff2 = document.getElementById("lightoff2");
 	
 	// 上排數值顯示
 	function loop() {
@@ -249,8 +253,8 @@
 	});
 	// LED關燈
 	lightoff1.addEventListener('touchstart', function(event) {
-		lightoff2.src= './images/light_off.png';
-		lighton2.src= './images/lighton.png';
+		lightoff1.src= './images/light_off.png';
+		lighton1.src= './images/lighton.png';
 		cpf.set("socket d4", 0);
 	});
 	lighton2.addEventListener('touchstart', function(event) {
@@ -260,8 +264,8 @@
 	});
 	// LED關燈
 	lightoff2.addEventListener('touchstart', function(event) {
-		lightoff.src= './images/light_off.png';
-		lighton.src= './images/lighton.png';
+		lightoff2.src= './images/light_off.png';
+		lighton2.src= './images/lighton.png';
 		cpf.set("socket d5", 0);
 	});
 	
