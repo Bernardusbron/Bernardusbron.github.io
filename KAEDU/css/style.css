@@ -24,6 +24,16 @@ hr {
 #content {
 	margin-top: 40px;
 } 
+.inputs{
+	background-image: url("../images/KAEDU.jpg");	
+}
+.outputs{
+	background-image: url("../images/KAEDU.jpg");	
+}
+.control{
+	background-color: rgb(135, 17, 155);
+}
+
 
 .container {
 	padding-left: 0px;
