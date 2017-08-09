@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!--2017/08/09 Franklin Neyt - KAEDU interface for CPF web app -->
+<head>
+<title>KAEDU IOT</title>
+<link rel="stylesheet" type="text/css" href="./css/style.css">
+<meta charset="UTF-8">
+</head>
+<body>
+
+<div id="content">
+	<center>
+		<div class="inputs">
+		</div> 
+	        <div class="outputs">
+		</div>
+		<div class="control">
+		</div>
+	</center>
+</div>
+</html>
