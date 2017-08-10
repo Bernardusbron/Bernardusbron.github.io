@@ -85,51 +85,46 @@
 			</div>
 			<div class="switch">
 			    <h2>LED ORANJE1</h2>
-				<img src="./images/lighton.png" class="lighting" id="lighton">
-				<img src="./images/light_off.png" class="lighting" id="lightoff">
+				<img src="./images/lighton.png" class="lighting" id="lighton1">
+				<img src="./images/light_off.png" class="lighting" id="lightoff1">
 			</div>
 			<div class="switch">
 			  	<h2>LED GROEN1</h2>
-				<img src="./images/lighton.png" class="lighting" id="lighton">
-				<img src="./images/light_off.png" class="lighting" id="lightoff">
+				<img src="./images/lighton.png" class="lighting" id="lighton2">
+				<img src="./images/light_off.png" class="lighting" id="lightoff2">
 			</div>
 			<div class="switch">
 			    <h2>LED IR</h2>
-				<img src="./images/lighton.png" class="lighting" id="lighton">
-				<img src="./images/light_off.png" class="lighting" id="lightoff">
+				<img src="./images/lighton.png" class="lighting" id="lighton3">
+				<img src="./images/light_off.png" class="lighting" id="lightoff3">
 			</div>
 		</div>
 		<div class="controle1">
 			<div class="switch">
 			    <h2>LED ROOD2</h2>
-				<img src="./images/lighton.png" class="lighting" id="lighton">
-				<img src="./images/light_off.png" class="lighting" id="lightoff">
+				<img src="./images/lighton.png" class="lighting" id="lighton4">
+				<img src="./images/light_off.png" class="lighting" id="lightoff4">
 			</div>
 			<div class="switch">
 			    <h2>LED ORANJE2</h2>
-				<img src="./images/lighton.png" class="lighting" id="lighton">
-				<img src="./images/light_off.png" class="lighting" id="lightoff">
+				<img src="./images/lighton.png" class="lighting" id="lighton5">
+				<img src="./images/light_off.png" class="lighting" id="lightoff5">
 			</div>
 			<div class="switch">
 			    <h2>LED GROEN2</h2>
-				<img src="./images/lighton.png" class="lighting" id="lighton">
-				<img src="./images/light_off.png" class="lighting" id="lightoff">
+				<img src="./images/lighton.png" class="lighting" id="lighton6">
+				<img src="./images/light_off.png" class="lighting" id="lightoff6">
 			</div>
 			<div class="switch">
 			    <h2>BUZZER</h2>
-				<img src="./images/lighton.png" class="lighting" id="lighton">
-				<img src="./images/light_off.png" class="lighting" id="lightoff">
+				<img src="./images/lighton.png" class="lighting" id="lighton7">
+				<img src="./images/light_off.png" class="lighting" id="lightoff7">
 			</div>
 		</div>
     </div>
 </div> 
 	
 <script>
-
-	/*if (window.Worker) {
-		var worker = new Worker("worker.js");
-	}*/
-
 	setup();
 	
 	var json = new Object();
@@ -146,132 +141,110 @@
 	var lightoff1 = document.getElementById("lightoff1");
 	var lighton2 = document.getElementById("lighton2");
 	var lightoff2 = document.getElementById("lightoff2");
-	
-	// 上排數值顯示
+	var lightoff2 = document.getElementById("lightoff3");
+	var lighton2 = document.getElementById("lighton3");
+	var lightoff2 = document.getElementById("lightoff4");
+	var lighton2 = document.getElementById("lighton4");
+	var lightoff2 = document.getElementById("lightoff5");
+	var lighton2 = document.getElementById("lighton5");
+	var lightoff2 = document.getElementById("lightoff6");
+	var lighton2 = document.getElementById("lighton6");
+	var lightoff2 = document.getElementById("lightoff7");
+	var lighton2 = document.getElementById("lighton7");
+
 	function loop() {
 		
-			/*// 透過執行緒一次讀取所有數值
-			json = {"request": "read", "write": {"pin":"0", "value":"0"}};
-			
-			worker.postMessage(json);
-			
-			worker.onmessage = function(result) {
-				alert(result.data.tempValue);
-			}*/
-			
-			// 溫度感測
-			tempValue = toCelsius(cpf.get("socket a1"));
-			document.getElementById("tempValue").innerHTML = tempValue;
-			
-			// 切換溫度狀態
-			if (tempValue <= 20 || tempValue >= 35 ) {
-				document.getElementById("tempStatus").src= './images/warn.png';
-			}else if ( tempValue <= 15 || tempValue >= 40 ) {
-				document.getElementById("tempStatus").src= './images/danger.png';
-			}else {
-				document.getElementById("tempStatus").src= './images/nice.png';
-			}
-			
-			// 光敏感測
-			lightValue = cpf.get("socket a0");
-			document.getElementById("lightValue").innerHTML = lightValue;
-			
-			// 切換光敏狀態
-			if (lightValue <= 50 ) {
-				document.getElementById("lightStatus").src= './images/warn.png';
-			}else {
-				document.getElementById("lightStatus").src= './images/nice.png';
-			}
-			
-			// 電流感測
-			elecValue = cpf.get("socket a2");
-			document.getElementById("elecValue").innerHTML = elecValue;
-			
-			// 切換電流狀態
-			if (elecValue >= 500 ) {
-				document.getElementById("elecStatus").src= './images/warn.png';
-			}else if ( elecValue >= 1000 ) {
-				document.getElementById("elecStatus").src= './images/danger.png';
-			}else {
-				document.getElementById("elecStatus").src= './images/nice.png';
-			}
-			
-			// 人體感測
-			thief = cpf.get("socket d7");
-			if(thief == 1) {
-				document.getElementById("thief").src = './images/thief_on.png';
-			}else {
-				document.getElementById("thief").src = './images/thief_off.png';
-			}
-			
-			// 一氧化碳
-			COValue = cpf.get("socket a3");
-			document.getElementById("COValue").innerHTML = COValue;
-			
-			// 切換一氧化碳狀態
-			if (COValue >= 50 ) {
-				document.getElementById("COStatus").src= './images/warn.png';
-			}else if ( elecValue >= 500 ) {
-				document.getElementById("COStatus").src= './images/danger.png';
-			}else {
-				document.getElementById("COStatus").src= './images/nice.png';
-			}
-			
-		// 設置loop間隔
 		setTimeout("loop()", 1000);
 	}
 	
 	loop();
 	
-	// 風扇
-	function fan(value) {
-		cpf.set("socket d3", Number(value));
-	}
-	
-
 	lighton.addEventListener('touchstart', function(event) {
 		lighton.src= './images/light_on.png';
 		lightoff.src= './images/lightoff.png';
-		cpf.set("socket d2", 1);
+		cpf.request('["digitalWrite",18,1]');
 	});
 	lightoff.addEventListener('touchstart', function(event) {
 		lightoff.src= './images/light_off.png';
 		lighton.src= './images/lighton.png';
-		cpf.set("socket d2", 0);
+		cpf.request('["digitalWrite",18,0]');
 	});
 	lighton1.addEventListener('touchstart', function(event) {
 		lighton1.src= './images/light_on.png';
 		lightoff1.src= './images/lightoff.png';
-		cpf.set("socket d4", 1);
+		cpf.request('["digitalWrite",17,1]');
 	});
 	lightoff1.addEventListener('touchstart', function(event) {
 		lightoff1.src= './images/light_off.png';
 		lighton1.src= './images/lighton.png';
-		cpf.set("socket d4", 0);
+		cpf.request('["digitalWrite",17,0]');
 	});
 	lighton2.addEventListener('touchstart', function(event) {
 		lighton2.src= './images/light_on.png';
 		lightoff2.src= './images/lightoff.png';
-		cpf.request('["digitalWrite",8,1]');
+		cpf.request('["digitalWrite",2,1]');
 	});
 	lightoff2.addEventListener('touchstart', function(event) {
 		lightoff2.src= './images/light_off.png';
 		lighton2.src= './images/lighton.png';
-		cpf.request('["digitalWrite",8,0]');
+		cpf.request('["digitalWrite",2,0]');
+	});
+	lighton3.addEventListener('touchstart', function(event) {
+		lighton2.src= './images/light_on.png';
+		lightoff2.src= './images/lightoff.png';
+		cpf.request('["digitalWrite",7,1]');
+	});
+	lightoff3.addEventListener('touchstart', function(event) {
+		lightoff2.src= './images/light_off.png';
+		lighton2.src= './images/lighton.png';
+		cpf.request('["digitalWrite",7,0]');
+	});
+	lighton4.addEventListener('touchstart', function(event) {
+		lighton2.src= './images/light_on.png';
+		lightoff2.src= './images/lightoff.png';
+		cpf.request('["digitalWrite",3,1]');
+	});
+	lightoff4.addEventListener('touchstart', function(event) {
+		lightoff2.src= './images/light_off.png';
+		lighton2.src= './images/lighton.png';
+		cpf.request('["digitalWrite",3,0]');
+	});
+	lighton5.addEventListener('touchstart', function(event) {
+		lighton2.src= './images/light_on.png';
+		lightoff2.src= './images/lightoff.png';
+		cpf.request('["digitalWrite",4,1]');
+	});
+	lightoff5.addEventListener('touchstart', function(event) {
+		lightoff2.src= './images/light_off.png';
+		lighton2.src= './images/lighton.png';
+		cpf.request('["digitalWrite",4,0]');
+	});
+	lighton6.addEventListener('touchstart', function(event) {
+		lighton2.src= './images/light_on.png';
+		lightoff2.src= './images/lightoff.png';
+		cpf.request('["digitalWrite",5,1]');
+	});
+	lightoff6.addEventListener('touchstart', function(event) {
+		lightoff2.src= './images/light_off.png';
+		lighton2.src= './images/lighton.png';
+		cpf.request('["digitalWrite",5,0]');
+	});
+	lighton7.addEventListener('touchstart', function(event) {
+		lighton2.src= './images/light_on.png';
+		lightoff2.src= './images/lightoff.png';
+		cpf.request('["digitalWrite",13,1]');
+	});
+	lightoff7.addEventListener('touchstart', function(event) {
+		lightoff2.src= './images/light_off.png';
+		lighton2.src= './images/lighton.png';
+		cpf.request('["digitalWrite",13,0]');
 	});
 	
-	// 溫度轉攝氏
-	function toCelsius(value) {
-		var resistance = parseFloat((1023-value) * 10000 / value);
-		var temperature = 1 / (Math.log(resistance / 10000) / 3975+1 / 298.15) - 273.15;
-			
-		return temperature.toFixed(2);
-	}
 
 	// cpf setup
 	function setup(){
 		if(cpf)
-			var ret = cpf.setPinMode('["resetPin"],["setPinMode", "analog", 0, "INPUT"],["setPinMode", "analog", 1, "INPUT"],["setPinMode", "analog", 2, "INPUT"],["setPinMode", "analog", 3, "INPUT"],["setPinMode", "digital", 2,"OUTPUT"],["setPinMode", "digital", 4,"OUTPUT"],["setPinMode", "digital", 8,"OUTPUT"],["setPinMode", "digital", 3,"PWM"],["setPinMode", "digital", 7,"INPUT"]');
+			var ret = cpf.setPinMode('["resetPin"],["setPinMode", "analog", 0, "INPUT"],["setPinMode", "analog", 1, "INPUT"],["setPinMode", "analog", 2, "INPUT"],["setPinMode", "digital", 2,"OUTPUT"],["setPinMode", "digital", 3,"OUTPUT"],["setPinMode", "digital", 4,"OUTPUT"],["setPinMode", "digital", 5,"OUTPUT"],["setPinMode", "digital", 7,"INPUT"],["setPinMode", "digital", 17,"OUTPUT"],["setPinMode", "digital", 18,"OUTPUT"]');
 		
 	}
 
