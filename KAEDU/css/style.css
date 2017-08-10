@@ -1,15 +1,11 @@
 html {
 	font-family: Microsoft JhengHei;
 	width: 100%
-	background-color: rgb(135, 172, 85);
 }
 
 h2 {
-	position: absolute;
-	margin: auto;
-	left: 0;
-	right: 0;
 	font-size: 15pt;
+	margin : 0px 5px 2px 5px;
 }
 
 hr {
@@ -20,50 +16,60 @@ hr {
 }
 
 #content {
+    margin-left: auto; margin-right: auto;
 	margin-top: 40px;
-	width: 90%;
-        background-color: rgb(255, 0, 0);
+	width: 800px;
+	background-color: rgb(135, 172, 85);
 } 
 .inputs{
-	background-image: url("../images/KAEDU.jpg");
+	background-image: url("../images/KAEDU.jpg"); 
+	background-repeat: no-repeat
 	background-size: 800px;
+	height:450px;
 }
 .digital{
-        background-color: rgb(255, 255, 0);
-	position: left;
-	height: 450px;
+	float: left;
 	width: 200px;
-	margin-left: 25px;
-	margin-right: 25px;
-	color: white;
+	height : 400px;
+	margin : 25px 10px 25px 10px ;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+.digital_value{
+    margin: 5px 0px 15px 0px;
 }
 .analog{
-	background-color: rgb(0, 255, 255);
-	position: right;
-	height: 450px;
+	float: left;
 	width: 200px;
-	margin-left: 25px;
-	margin-right: 25px;
-	color: white;
+    margin : 210px 0px 10px 0px; 
+	background-color: rgba(255, 255, 255, 0.5);
+}
+.analog_value {
+     margin: 5px 0px 15px 0px;   
 }
 .outputs{
-	background-image: url("../images/KAEDU.jpg");
-	background-size: 800px;
+	background-image: url("../images/KAEDU.jpg"); 
+	background-repeat: no-repeat;
+}
+.leds{
+    height:450px;
+    width : 200px;
+    margin : 25px auto 25px 425px;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 .control{
-	background-color: rgb(0, 255, 0);
-	height: auto;
-	width:100%;
+	height: 300px;
 }
 .controle1{
-	background-color: rgb(0, 0, 255);
-	width:80%;
+    width:90%;
 }
 .switch{
-	background-color: rgb(255, 255, 255);
-	display: inline-block;
-	width:50px;
-	height:50px;
+	width:150px;
+	padding:5px 15px 5px 15px;
+    float:left;
+}
+.switch img {
+    width:150px;
+    padding:2px;
 }
 
 
