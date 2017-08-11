@@ -168,22 +168,22 @@
 	lighton.addEventListener('touchstart', function(event) {
 		lighton.src= './images/light_on.png';
 		lightoff.src= './images/lightoff.png';
-		cpf.request('["digitalWrite",18,1]');
+		cpf.request('["digitalWrite",A3,1]');
 	});
 	lightoff.addEventListener('touchstart', function(event) {
 		lightoff.src= './images/light_off.png';
 		lighton.src= './images/lighton.png';
-		cpf.request('["digitalWrite",18,0]');
+		cpf.request('["digitalWrite",A3,0]');
 	});
 	lighton1.addEventListener('touchstart', function(event) {
 		lighton1.src= './images/light_on.png';
 		lightoff1.src= './images/lightoff.png';
-		cpf.request('["digitalWrite",17,1]');
+		cpf.request('["digitalWrite",A4,1]');
 	});
 	lightoff1.addEventListener('touchstart', function(event) {
 		lightoff1.src= './images/light_off.png';
 		lighton1.src= './images/lighton.png';
-		cpf.request('["digitalWrite",17,0]');
+		cpf.request('["digitalWrite",A4,0]');
 	});
 	lighton2.addEventListener('touchstart', function(event) {
 		lighton2.src= './images/light_on.png';
@@ -250,7 +250,7 @@
 	// cpf setup
 	function setup(){
 		if(cpf)
-			var ret = cpf.setPinMode('["resetPin"],["setPinMode", "analog", 0, "INPUT"],["setPinMode", "analog", 1, "INPUT"],["setPinMode", "analog", 2, "INPUT"],["setPinMode", "digital", 2,"OUTPUT"],["setPinMode", "digital", 3,"OUTPUT"],["setPinMode", "digital", 4,"OUTPUT"],["setPinMode", "digital", 5,"OUTPUT"],["setPinMode", "digital", 7,"INPUT"],["setPinMode", "digital", 17,"OUTPUT"],["setPinMode", "digital", 18,"OUTPUT"]');
+			var ret = cpf.setPinMode('["resetPin"],["setPinMode", "analog", 0, "INPUT"],["setPinMode", "analog", 1, "INPUT"],["setPinMode", "analog", 2, "INPUT"],["setPinMode", "digital", 2,"OUTPUT"],["setPinMode", "digital", 3,"OUTPUT"],["setPinMode", "digital", 4,"OUTPUT"],["setPinMode", "digital", 5,"OUTPUT"],["setPinMode", "digital", 7,"INPUT"],["setPinMode", "digital", A3,"OUTPUT"],["setPinMode", "digital", A4,"OUTPUT"]');
 		
 	}
 
