@@ -34,15 +34,15 @@
 		<div class="analog">
 			<h2>KNOB :</h2>
 			<div class="analog_value" >
-				1023
+			<span id="knob">0</span>
 			</div>
 			<h2>NTC :</h2>
 			<div class="analog_value" >
-				0
+			<span id="temp">0</span>
 			</div>
 			<h2>LIGHT :</h2>
 			<div class="analog_value" >
-				256
+			<span id="light">0</span>
 			</div>
 		</div>
 	</div> 
@@ -129,11 +129,9 @@
 	
 	var json = new Object();
 	
-	var tempValue;
-	var lightValue;
-	var elecValue;
-	var thief;
-	var COValue;
+	var temp;
+	var light;
+	var knob;
 	
 	var lighton = document.getElementById("lighton");
 	var lightoff = document.getElementById("lightoff");
@@ -153,6 +151,14 @@
 	var lighton2 = document.getElementById("lighton7");
 
 	function loop() {
+		temp = cpf.get("socket a1");
+		document.getElementById("temp").innerHTML = temp;
+		knob = cpf.get("socket a0");
+		document.getElementById("knob").innerHTML = knob;
+		light = cpf.get("socket a2");
+		document.getElementById("light").innerHTML = light;
+		
+		
 		
 		setTimeout("loop()", 1000);
 	}
